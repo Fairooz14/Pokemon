@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDex</title>
+
+    <!-- remix icon cdn link -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- javascript file link -->
+    <!-- defer: To run the html file before javascript file -->
+    <script src="javascript/pokemon.js" defer></script>
+
+    <!-- shorticon -->
+    <link rel="shortcut icon" type="image/x-icon" href="Assests/short_logo.png">
+
+</head>
+
+<body>
+    <main class="main">
+
+        <!-- header section starts -->
+        <header class="header-home">
+            <div class="container">
+                <!-- logo -->
+                <div class="logo-wrapper">
+                    <img src="Assests/Pokedex_logo.png" alt="">
+                </div>
+                
+                <!-- search bar -->
+                <div class="search_wrapper"> 
+
+                    <!-- searching field -->
+                    <div class="search-wrap">
+                        <i class="ri-search-2-line search-icon" id="search-icon"></i>
+                        <input type="text" class="search-input body3-fonts" placeholder="Search Here " id="search-input">
+                        <i class="ri-close-line search-close-icon" id="search-close-icon"></i>
+                    </div>
+
+                    <!-- sorting feature -->
+                    <div class="sort-wrapper">
+                        <div class="sort-wrap">
+                            <i class="ri-sort-desc sort-icon" id="sort-icon"></i>
+                        </div>
+
+                        <div class="filter-wrapper">
+                            <p class="body2-fonts">Sort by:</p>
+                            <div class="filter-warp">
+                                <input type="radio" id="number" name="filters" value="number" checked>
+                                <label for="number" class="body3-fonts">Number</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="name" name="filters" value="name">
+                                <label for="name" class="body3-fonts">Name</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header section ends -->
+
+        <!-- pokemon-list section template starts -->
+        <section class="pokemon-list">
+            <div class="container">
+                <div class="list-wrapper">
+                </div>
+            </div>
+            <div id="not-found-message">Pokemon Not Found <i class="ri-emotion-sad-line"></i></div>
+        </section>
+        <!-- pokemon-list section template ends -->
+
+    </main>
+
+</body>
+</html>

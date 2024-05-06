@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Details</title>
+
+    <!-- remix icon cdn link -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- javascript file link -->
+    <script src="javascript/pokemon-detail.js" defer></script>
+
+    <!-- shorticon -->
+    <link rel="shortcut icon" type="image/x-icon" href="Assests/short_logo.png">
+</head>
+<body>
+
+    <main class="detail-main main">
+        <!-- header section started -->
+        <header class="header">
+            <div class="header-wrapper">
+                <div class="header-wrap">
+                    <a href="index.html" class="back-btn-wrap">
+                        <i class="ri-arrow-left-circle-line back-btn" id="back-btn"></i>
+                    </a>
+
+                    <div class="name-wrap">
+                        <h1 class="name"></h1>
+                    </div>
+                </div>
+
+                <div class="pokemon-id-wrap">
+                    <p class="body2-fonts"></p>
+                </div>
+            </div>
+        </header>
+        <!-- header section ends -->
+
+        <!-- deatail image showcase started-->
+        <div class="featured-img">
+            <a href="#" class="arrow  left-arrow" id="leftArrow">
+                <i class="ri-arrow-left-s-line"></i> 
+            </a>
+            <div class="detail-img-wrapper">
+                <img src="" alt="">
+            </div>
+            <a href="#" class="arrow right-arrow" id="rightArrow">
+                <i class="ri-arrow-right-s-line"></i>
+            </a>
+        </div>
+        <!-- deatail image showcase ends-->
+
+        <div class="detail-card-detail-wrapper">
+            <div class="power-wrapper">
+                <p class="body3-fonts type grass"></p>
+                <p class="body3-fonts type poison"></p>
+            </div>
+            <p class="body2-fonts about-text">About</p>
+
+
+            <div class="pokemon-detail-wrapper">
+                <div class="pokemon-detail-wrap">
+                    <div class="pokemon-detail">
+                       <img src="Assests/gym.svg" alt="">
+                       <p class="body3-fonts weight"></p>
+                    </div>
+                    <p class="caption-fonts">Weight</p>
+                </div>
+
+                <div class="pokemon-detail-wrap">
+                    <div class="pokemon-detail">
+                       <img src="Assests/height.svg" alt="">
+                       <p class="body3-fonts height"></p>
+                    </div>
+                    <p class="caption-fonts">Height</p>
+                </div>
+
+                <div class="pokemon-detail-wrap">
+                    <div class="pokemon-detail move">
+                       <p class="Caption-fonts">Moves</p>
+                    </div>
+                </div>
+
+                <p class="body3-fonts pokemon-description"></p>
+                <p class="body2-fonts about-text">Basic Stats</p>
+                <div class="stats-wrapper">
+                    <div class="stats-wrap" data-stat="hp">
+                        <p class="body3-fonts stats">HP</p>
+                        <p class="body3-fonts"></p>
+                        <progress value="" max="100" class="progress-bar"></progress>
+                    </div>
+
+                    <div class="stats-wrap" data-stat="ATK">
+                        <p class="body3-fonts stats">ATK</p>
+                        <p class="body3-fonts"></p>
+                        <progress value="" max="100" class="progress-bar"></progress>
+                    </div>
+
+                    <div class="stats-wrap" data-stat="DEF">
+                        <p class="body3-fonts stats">DEF</p>
+                        <p class="body3-fonts"></p>
+                        <progress value="" max="100" class="progress-bar"></progress>
+                    </div>
+
+                    <div class="stats-wrap" data-stat="SATK">
+                        <p class="body3-fonts stats">SATK</p>
+                        <p class="body3-fonts"></p>
+                        <progress value="" max="100" class="progress-bar"></progress>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Background image -->
+        <img src="Assests/pokedex.png" class="detail-bg" alt="">
+    </main>
+</body>
+</html>
