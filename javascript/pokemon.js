@@ -4,14 +4,19 @@ const searchInput = document.querySelector("#search-input");
 const numberFilter = document.querySelector("#number");
 const nameFilter = document.querySelector("#name");
 const notFoundMessage = document.querySelector("#not-found-message");
+const loadMoreBtn = document.querySelector("#load-more-btn");
+
+//load more functionality
+
 
 //Empty array before fetching 
 let allPokemons = [];
+let offset = 0; // Offset for paginating through API results
 
 ///------------------------------------------------------REQUESTING FOR API FETCHING SECTION---------------------------------------------------------
 
 //Basic structure of fetching PokeAPI url 
-fetch(`https://pokeapi.co/api/v2/pokemon?limit=${MAX_POKEMON}`)
+fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`)
     .then((response) => response.json())
     .then((data) => {
 
@@ -26,9 +31,11 @@ fetch(`https://pokeapi.co/api/v2/pokemon?limit=${MAX_POKEMON}`)
         allPokemons = data.results;
         displayPokemons(allPokemons);
     });
+
 async function fetchPokemonDataBeforeRedirect(id) {
     try {
         const [pokemon, pokemonSpecies] = await Promise.all([
+
             fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
             .then((response) =>
                 response.json()
@@ -38,6 +45,7 @@ async function fetchPokemonDataBeforeRedirect(id) {
             .then((response) =>
                 response.json()
             ),
+
         ]);
         return true;
     } catch (error) {
@@ -46,6 +54,22 @@ async function fetchPokemonDataBeforeRedirect(id) {
     // const someData = API data from url
     // console.log(someData)
 }
+
+// Function to fetch Pokémon from API for loading 
+async function fetchPokemons() {
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`);
+        const data = await response.json();
+        allPokemons = [...allPokemons, ...data.results];
+        offset += 20;
+        displayPokemons(allPokemons);
+    } catch (error) {
+        console.error("Failed to fetch Pokémon data:", error);
+    }
+}
+
+// Load initial Pokémon on page load
+fetchPokemons();
 
 ///------------------------------------------------------CREATING HTML STRCUCTURE OF EACH CARD TO DISPLAY-------------------------------------------
 
@@ -78,7 +102,7 @@ function displayPokemons(pokemon) {
 
             <div class="front-content">
               <small class="number-wrap">
-                <p class="caption_fonts">#${pokemonID}</p>
+                <p class="caption_fonts">No. ${pokemonID}</p>
               </small>
               <div class="description">
                 <div class="name-wrap">
@@ -114,6 +138,7 @@ function displayPokemons(pokemon) {
     });
 }
 
+loadMoreBtn.addEventListener("click", fetchPokemons);
 
 ///---------------------------------------------------------------------ENABLING SEARCH FUNCTION----------------------------------------------------
 
