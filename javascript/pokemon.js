@@ -1,5 +1,5 @@
-const MAX_POKEMON = 100000;
-const listWrapper = document.querySelector(".list-wrapper");
+const MAX_POKEMON = 10000;
+const listWrapper = document.querySelector(".pokemon-list");
 const searchInput = document.querySelector("#search-input");
 const numberFilter = document.querySelector("#number");
 const nameFilter = document.querySelector("#name");
@@ -60,16 +60,45 @@ function displayPokemons(pokemon) {
         const listItem = document.createElement("div");
         listItem.className = "list-item";
         listItem.innerHTML = `
-            <div class = "number-wrap">
-                <p class = "caption_fonts" >#${pokemonID}</p>
+            <div class="back">
+            <div class="back-content">
+              <img src="https://raw.githubusercontent.com/pokeapi/sprites/master/sprites/pokemon/other/dream-world/${pokemonID}.svg" alt="${pokemon.name}">
             </div>
-            <div class = "image-wrap">
-            <img src="https://raw.githubusercontent.com/pokeapi/sprites/master/sprites/pokemon/other/dream-world/${pokemonID}.svg" alt="${pokemon.name}" />
+          </div>
+
+          <div class="front">
+            <div class="img">
+              <div class="circle">
+              </div>
+              <div class="circle" id="right">
+              </div>
+              <div class="circle" id="bottom">
+              </div>
             </div>
-            <div class = "name-wrap">
-                <p class= "body3-fonts">${pokemon.name}</p>
+
+            <div class="front-content">
+              <small class="number-wrap">
+                <p class="caption_fonts">#${pokemonID}</p>
+              </small>
+              <div class="description">
+                <div class="name-wrap">
+                  <p class="body3-fonts">
+                    <strong>${pokemon.name}</strong>
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
         `;
+        // <div class = "number-wrap">
+        // <p class = "caption_fonts" >#${pokemonID}</p>
+        // </div>
+        // <div class = "image-wrap">
+        // <img src="https://raw.githubusercontent.com/pokeapi/sprites/master/sprites/pokemon/other/dream-world/${pokemonID}.svg" alt="${pokemon.name}" />
+        // </div>
+        // <div class = "name-wrap">
+        //     <p class= "body3-fonts">${pokemon.name}</p>
+        // </div> 
 
         //click event that will take to the detailed page of each pokemon card selected.
         listItem.addEventListener("click", async () => {
