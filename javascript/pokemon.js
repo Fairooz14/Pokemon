@@ -16,21 +16,21 @@ let offset = 0; // Offset for paginating through API results
 ///------------------------------------------------------REQUESTING FOR API FETCHING SECTION---------------------------------------------------------
 
 //Basic structure of fetching PokeAPI url 
-fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`)
-    .then((response) => response.json())
-    .then((data) => {
+// fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`)
+//     .then((response) => response.json())
+//     .then((data) => {
 
-        // console.log(data);
-        // console.log(data.results);
-        // console.log(data.results[0]);
-        // console.log(data.results[0].name);
-        // console.log(data.results[0].url);
-        // console.log(allPokemons);
+//         // console.log(data);
+//         // console.log(data.results);
+//         // console.log(data.results[0]);
+//         // console.log(data.results[0].name);
+//         // console.log(data.results[0].url);
+//         // console.log(allPokemons);
 
-        //Calling display fuction inside the fetch request to put it in the empty array
-        allPokemons = data.results;
-        displayPokemons(allPokemons);
-    });
+//         //Calling display fuction inside the fetch request to put it in the empty array
+//         allPokemons = data.results;
+//         displayPokemons(allPokemons);
+//     });
 
 async function fetchPokemonDataBeforeRedirect(id) {
     try {
