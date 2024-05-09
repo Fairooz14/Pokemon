@@ -125,7 +125,9 @@ input:focus-visible {
 /* logo wrapper started*/
 .logo-wrapper {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-evenly;
+  
 }
 
 .logo-wrapper img {
@@ -139,8 +141,8 @@ input:focus-visible {
 /* logo wrapper ended */
 
 /* Search wrapper started */
-.search-wrapper {
-  width: 90%;
+/* .search-wrapper {
+  width: 80%;
   display: flex;
   justify-content: space-between;
   gap: 4px;
@@ -171,9 +173,9 @@ input:focus-visible {
   border: none;
 }
 
-/* Search wrapper ended */
+/* Search wrapper ended 
 
-/* sort warp started */
+sort warp started 
 .sort-wrapper {
   height: 2rem;
   width: 2rem;
@@ -201,10 +203,68 @@ input:focus-visible {
   left: 25%;
   color: rgb(216, 200, 18);
   font-weight: 700;
-}
+} */
 
 /* sort warp ended */
+.wrap-header{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-evenly;
+}
+.search-wrapper,
+.search-wrap {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  gap: 16px;
+}
 
+.search-wrap {
+  position: relative;
+  background-color: var(--grayscale-white);
+  border-radius: 16px;
+  box-shadow: var(--drop-shadow-inner);
+  height: 32px;
+  gap: 8px;
+}
+
+.search-icon {
+  margin-left: 16px;
+}
+
+.search-wrap svg path {
+  fill: var(--identity-primary);
+}
+
+.search-wrap > input {
+  width: 60%;
+  border: none;
+}
+
+.sort-wrapper {
+  position: relative;
+}
+
+.sort-wrap {
+  background-color: var(--grayscale-white);
+  width: 30px;
+  border-radius: 50%;
+  height: 30px;
+  box-shadow: var(--drop-shadow-inner);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#sort-icon {
+  color: rgb(216, 200, 18);
+  font-weight: 700;
+}
+#search-icon{
+  color: rgb(216, 200, 18);
+  font-weight: 700;
+}
 /* serach closed Started */
 .search-close-icon {
   position: absolute;
@@ -285,10 +345,11 @@ input:focus-visible {
   background-color: var(--grayscale-white);
   box-shadow: var(--drop-shadow-inner);
   border-radius: 0.75rem;
-  min-height: calc(85.5% - 1rem);
-  width: calc(100% - 1rem);
+  min-height: calc(85% - 1rem);
+  width: calc(98% - 1rem);
   max-height: 100px;
   overflow-y: auto;
+  border: 2px solid black;
 }
 
 .pokemon-list {
@@ -300,8 +361,7 @@ input:focus-visible {
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
-  justify-content: space-between;
-
+  justify-content: space-evenly;
 }
 
 .list-item {
@@ -312,14 +372,13 @@ input:focus-visible {
   box-shadow: 0px 0px 10px 1px #000000ee;
   border-radius: 5px;
   margin: 1rem;
-
   text-decoration: none;
   cursor: pointer;
-  flex: 0 1 20%;
+  flex: 0 1 18rem;
 }
 
 .back-content>img {
-  height: 15rem;
+  height: auto;
   width: 15rem;
   margin: auto;
 }
@@ -359,7 +418,7 @@ input:focus-visible {
   position: absolute;
   width: 99%;
   height: 99%;
-  background-color: #72723b;
+  background-color: var(--identity-primary);
   border-radius: 5px;
   color: white;
   display: flex;
@@ -483,39 +542,21 @@ input:focus-visible {
 }
 
 /* Load More-------------- */
-#load-more {
-  width: calc((100% / 3) - 8px);
-  padding: 16px;
-  background-color: rgb(208, 28, 28);
-  border: none;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  border-radius: 3px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
-}
 
-#load-more:not([disabled]):hover {
-  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
-}
-
-#load-more[disabled] {
-  background-color: #eaeaea !important;
-}
-
-/* Load More  */
 #load-more-btn {
   height: 30rem;
   width: 10rem;
   background-color: rgb(255, 234, 0);
   border: 2px solid rgb(117, 133, 12);
-  border-radius: 20%;
-  color: rgb(155, 181, 12);
+  border-radius: 15px;
+  color: rgb(50, 57, 10);
   padding: 15px;
   font-size: large;
+  font-style: var(--body1-font-size);
   font-family: Georgia, 'Times New Roman', Times, serif;
   cursor: pointer;
+  box-shadow: 5px 4px 20px rgb(129, 131, 8);
+
 }
 
 /* ------------------------------------------------------------------Detail Page-------------------------------------------- */
