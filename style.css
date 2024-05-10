@@ -185,6 +185,7 @@ input:focus-visible {
 
 .sort-wrapper {
   position: relative;
+  cursor: pointer;
 }
 
 .sort-wrap {
@@ -218,6 +219,7 @@ input:focus-visible {
   right: 1rem;
   display: none;
   cursor: pointer;
+  color: #e6d080;
 }
 
 .search-close-icon-visible {
@@ -229,19 +231,21 @@ input:focus-visible {
 /* Filter overlay started */
 .filter-wrapper {
   position: absolute;
-  background: var(--identity-primary);
+  background: #e6d080;
   border: 4px solid var(--identity-primary);
   border-top: 0;
   border-radius: 12px;
   padding: 0px 4px 4px 4px;
   right: 0px;
   box-shadow: var(--drop-shadow-hover);
-  min-width: 113px;
+  min-width: 200px;
   top: 40px;
   display: none;
   z-index: 5000;
 }
-
+.sortby{
+  font-size: 1rem;
+}
 .filter-wrapper-open {
   display: block;
 }
@@ -259,18 +263,26 @@ input:focus-visible {
 }
 
 .filter-wrapper>.body2-fonts {
-  color: var(--grayscale-white);
+  color: rgb(136, 130, 12);
   font-weight: var(--font-weight-bold);
   padding: 16px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
-
+.filter-warp .body3-fonts{
+  color: rgb(99, 97, 39);
+  font-weight: 600;
+}
 .filter-wrap {
   background-color: var(--grayscale-white);
   box-shadow: var(--drop-shadow-inner);
   padding: 16px 20px;
   border-radius: 8px;
 }
-
+.filter-wrapper > hr{
+  border-color: rgb(168, 165, 59);
+  opacity: 40%;
+}
 .filter-wrap>div {
   display: flex;
   align-items: center;
@@ -296,7 +308,7 @@ input:focus-visible {
   width: calc(98% - 1rem);
   max-height: 100px;
   overflow-y: auto;
-  border: 2px solid black;
+  /* //border: 2px solid black; */
 }
 
 .pokemon-list {
