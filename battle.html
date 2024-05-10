@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Battle</title>
+
+
+    <!-- remix icon cdn link -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+
+   
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/battle.css">
+
+  <!-- Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <!-- Custom JavaScript -->
+  <script src="javascript/pokemon_battle.js" defer></script>
+  <!-- Winner Card Component -->
+  <script src="javascript/winner-card.js" defer></script>
+
+  <!-- shorticon -->
+  <link rel="shortcut icon" type="image/x-icon" href="Assests/short_logo.png">
+
+</head>
+<body>
+  <div id="app" class="container">
+    <!-- header title  -->
+    <div>
+      <a href="index.html" class="back-btn-wrap">
+        <i class="ri-arrow-left-circle-line back-btn" id="back-btn"></i>
+      </a>
+      <h1 class="text-center mb-4">Pokémon Battle</h1>
+    </div>
+
+    <div class="battle-field">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- pokemon-1 selection -->
+          <div class="pokemon-select">
+            <label for="pokemon1">Player 1 Pokémon:</label>
+            <select v-model="selectedPokemon1" class="form-control">
+              <option v-for="pokemon in pokemons" :value="pokemon.name" >{{ pokemon.name }}</option>
+            </select>
+            <!-- pokemon-1 information -->
+            <div class="pokemon-info" v-if="selectedPokemon1">
+              <h3>{{ selectedPokemon1 }}</h3>
+              <img :src="pokemonImages[selectedPokemon1]"  class="pokemon-image" alt="Pokemon Image">
+              <div >Type: {{ pokemonDetails[selectedPokemon1]?.types.join(', ') }}</div>
+              <div>Abilities: {{ pokemonDetails[selectedPokemon1]?.abilities.join(', ') }}</div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-6">
+           <!-- pokemon-2 selection -->
+          <div class="pokemon-select">
+            <label for="pokemon2">Player 2 Pokémon:</label>
+            <select v-model="selectedPokemon2" class="form-control">
+              <option v-for="pokemon in pokemons" :value="pokemon.name">{{ pokemon.name }}</option>
+            </select>
+  
+            <!-- pokemon-2 information -->
+            <div class="pokemon-info" v-if="selectedPokemon2">
+              <h3>{{ selectedPokemon2 }}</h3>
+              <img :src="pokemonImages[selectedPokemon2]" class="pokemon-image" alt="Pokemon Image">
+              <div>Type: {{ pokemonDetails[selectedPokemon2]?.types.join(', ') }}</div>
+              <div>Abilities: {{ pokemonDetails[selectedPokemon2]?.abilities.join(', ') }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="text-center mt-4">
+        <button @click="startBattle" class="btn btn-primary">Start Battle</button>
+      </div>
+    </div>
+    
+    <!-- Winner Card -->
+    <div id="winner-card" v-if="showWinnerCard" class="winner-card">
+      <h4>The Winner is-</h4>
+      <h2>{{ battleResult }}</h2>
+      <img :src="pokemonImages[battleResult]" class="pokemon-image" alt="Winner Image"><br>
+      <button @click="resetBattle" class="btn btn-primary">Close</button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+</body>
+</html>

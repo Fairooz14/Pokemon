@@ -507,9 +507,13 @@ input:focus-visible {
 }
 
 /* Load More-------------- */
-
+.more-btn{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
 #load-more-btn {
-  height: 30rem;
+  height: 4rem;
   width: 10rem;
   background-color: rgb(255, 234, 0);
   border: 2px solid rgb(117, 133, 12);
@@ -521,7 +525,10 @@ input:focus-visible {
   font-family: Georgia, 'Times New Roman', Times, serif;
   cursor: pointer;
   box-shadow: 5px 4px 20px rgb(129, 131, 8);
-
+}
+#load-more-btn > a{
+  text-decoration: none;
+  color: rgb(50, 57, 10);
 }
 
 /* ------------------------------------------------------------------Detail Page-------------------------------------------- */
