@@ -38,7 +38,7 @@ This project uses the [PokeAPI](https://pokeapi.co/) to fetch Pokemon data. Refe
 
 ### Contributing
 
-Contributions are welcome! Please fork the repository and create a pull request with your changes. Make sure to follow the existing code style and include appropriate tests. It would be great to make the Pokemon Battle section more fun
+Contributions are welcome! Please fork the repository and create a pull request with your changes. Make sure to follow the existing code style and include appropriate tests. It would be great to make the Pokemon Battle section more fun.
 
 
 ---
