@@ -27,7 +27,7 @@ This project is a Pokedex application that allows users to explore and learn abo
 ### Project Structure
 
 - `index.html`: The main HTML file.
-- `styles.css`: The stylesheet for the project.
+- `styles/`: The folder for project stylesheet
 - `app.js`: The main JavaScript file containing the logic for fetching and displaying Pokemon data.
 - `battle.js`: The JavaScript file containing the logic for the Pokemon battle feature.
 - `assets/`: Directory containing any images or other assets used in the project.
