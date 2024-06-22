@@ -30,9 +30,7 @@ This project is a Pokedex application that allows users to explore and learn abo
 - `detail.html` : The detail file of each pokemon after selecting.
 - `battle.html` : Comparison between any 2 selected pokemon.
 - `styles/`: The folder for project stylesheet.
-- `app.js`: The main JavaScript file containing the logic for fetching and displaying Pokemon data.
-- `battle.js`: The JavaScript file containing the logic for the Pokemon battle feature.
-- `assets/`: Directory containing any images or other assets used in the project.
+- `javascript/`: All the JavaScript file containing the logic for fetching, displaying Pokemon data and battle features.
 
 ### API Reference
 
